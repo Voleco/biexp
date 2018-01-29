@@ -1,0 +1,1 @@
+for i in mazes/maze512-1-*.map; do printf "$i\n"; ../bin/release/bidirectional -nbs $i ../scenarios/$i.scen | grep "^time" | awk 'BEGIN {} {a += $2; b += $3; c += $4; d += $5; e+= $6; s++ } END { printf("s: %d A*: %f BS*: %f MM: %f NBS: %f MM0: %f \n",s, a, b,c,d,e) }'; done
